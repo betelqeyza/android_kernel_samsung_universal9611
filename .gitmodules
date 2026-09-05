@@ -1,0 +1,6 @@
+[submodule "AnyKernel3"]
+	path = AnyKernel3
+	url = https://git.betelqeyza.dev/my_exynos/AnyKernel3
+[submodule "KernelSU"]
+	path = KernelSU
+	url = https://github.com/ReSukiSU/ReSukiSU
