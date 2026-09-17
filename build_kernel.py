@@ -175,7 +175,7 @@ def main():
     copy_file(f'{output_dir}/arch/arm64/boot/dtbo-{args.target}.img', f'{anykernel3_dir}/dtbo.img')
     copy_file(f'{output_dir}/arch/arm64/boot/exynos9611.dtb', f'{anykernel3_dir}/dtb')
 
-    zip_filename = f'RuSukiSU_CRD_{args.target}_{datetime.today().strftime("%Y-%m-%d")}.zip'
+    zip_filename = f'ReSukiSU_CRD_{args.target}_{datetime.today().strftime("%Y-%m-%d")}.zip'
 
     os.chdir('AnyKernel3/')
 

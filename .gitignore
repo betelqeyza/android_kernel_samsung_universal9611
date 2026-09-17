@@ -134,7 +134,7 @@ scripts/fmp/__pycache__/
 out/
 
 # Output of the zip file
-RuSukiSU_CRD_*.zip
+ReSukiSU_CRD_*.zip
 
 # Toolchain
 toolchain/
