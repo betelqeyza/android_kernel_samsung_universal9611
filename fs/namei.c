@@ -1721,7 +1721,6 @@ static struct dentry *__lookup_hash(const struct qstr *name,
 	struct dentry *dentry = lookup_dcache(name, base, flags);
 #ifdef CONFIG_KSU_SUSFS_SUS_PATH
 	bool found_sus_path = false;
-	bool is_fuse;
 #endif
 
 #ifdef CONFIG_KSU_SUSFS_SUS_PATH
@@ -1742,9 +1741,9 @@ retry:
 
 #ifdef CONFIG_KSU_SUSFS_SUS_PATH
 	dentry = lookup_real(base->d_inode, dentry, flags);
-	is_fuse = dentry->d_inode->i_sb->s_magic == FUSE_SUPER_MAGIC;
 
 	if (unlikely(dentry) && !IS_ERR(dentry) && dentry->d_inode && !found_sus_path && susfs_is_inode_sus_path(dentry->d_inode)) {
+		bool is_fuse = dentry->d_inode->i_sb->s_magic == FUSE_SUPER_MAGIC;
 		if (d_in_lookup(dentry))
 			d_lookup_done(dentry);
 		if (!(flags & LOOKUP_RCU))
