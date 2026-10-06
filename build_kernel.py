@@ -75,7 +75,7 @@ class ClangCompiler:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Build ReSukiSU9611 Kernel with specified arguments"
+        description="Build BakaSU9611 Kernel with specified arguments"
     )
     parser.add_argument(
         '--target',
@@ -116,7 +116,7 @@ def main():
     ).stdout.strip()
 
     display_info({
-        'Kernel name': 'ReSukiSU9611',
+        'Kernel name': 'BakaSU9611',
         'Branch': f'{current_branch}/{current_commit}',
         'Device': args.target,
         'Compiler version': ClangCompiler.get_version(),
@@ -175,7 +175,7 @@ def main():
     copy_file(f'{output_dir}/arch/arm64/boot/dtbo-{args.target}.img', f'{anykernel3_dir}/dtbo.img')
     copy_file(f'{output_dir}/arch/arm64/boot/exynos9611.dtb', f'{anykernel3_dir}/dtb')
 
-    zip_filename = f'ReSukiSU_CRD_{args.target}_{datetime.today().strftime("%Y-%m-%d")}.zip'
+    zip_filename = f'BakaSU_CRD_{args.target}_{datetime.today().strftime("%Y-%m-%d")}.zip'
 
     os.chdir('AnyKernel3/')
 
